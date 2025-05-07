@@ -1,5 +1,7 @@
 package net.dreakthenfantom.emberfall;
 
+import net.dreakthenfantom.emberfall.block.ModBlocks;
+import net.dreakthenfantom.emberfall.item.ModCreativeModeTabs;
 import net.dreakthenfantom.emberfall.item.Moditems;
 import org.slf4j.Logger;
 
@@ -41,7 +43,7 @@ import static net.neoforged.neoforge.internal.versions.neoforge.NeoForgeVersion.
 @Mod(EmberFall.MOD_ID)
 public class EmberFall {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "emberfallbydtf";
+    public static final String MOD_ID = "emberfall";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
@@ -57,7 +59,10 @@ public class EmberFall {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         Moditems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -74,6 +79,11 @@ public class EmberFall {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(Moditems.BERYL);
             event.accept(Moditems.BERYL_DUST);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.BERYL_BLOCK);
+            event.accept(ModBlocks.BERYL_ORE);
         }
     }
 

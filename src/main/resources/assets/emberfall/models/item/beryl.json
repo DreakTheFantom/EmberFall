@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "emberfallbydtf:item/beryl_dust"
+    "layer0": "emberfall:item/beryl"
   }
 }
