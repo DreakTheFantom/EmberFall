@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "beryl",
+  "ingredient": {
+    "item": "emberfall:beryl_ore"
+  },
+  "result":{
+    "count": 1,
+    "id": "emberfall:beryl"
+  }
+}

@@ -76,15 +76,7 @@ public class EmberFall {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(Moditems.BERYL);
-            event.accept(Moditems.BERYL_DUST);
-        }
 
-        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.BERYL_BLOCK);
-            event.accept(ModBlocks.BERYL_ORE);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
